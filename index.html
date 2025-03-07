@@ -1,0 +1,82 @@
+<html lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <title>Gemini</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
+    <style>
+    .messages {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    max-width: 80%;
+    margin: auto;
+    
+  }
+
+  .self-start {
+    align-self: flex-start; /* User messages left */
+  }
+
+  .self-end {
+    align-self: flex-end; /* Chatbot responses right */
+  }
+  
+  
+  #profileImage {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    object-fit: cover;
+    cursor: pointer;
+    position: absolute;
+    top: 20px;  /* Adjust as needed */
+    right: 16px; /* Adjust as needed */
+  }
+    </style>
+</head>
+<body class="bg-gray-900 text-white flex flex-col justify-between h-screen">
+    <!-- Top Bar -->
+    <div class="flex justify-between items-center p-4">
+        <div class="flex items-center space-x-4">
+            <i class="fas fa-comment text-xl"></i>
+            <div class="text-center">
+                <div class="text-lg">
+                    Raz
+                    <i class="fas fa-caret-down"></i>
+                </div>
+                <div class="text-sm text-gray-400">2.0 Flash</div>
+            </div>
+        </div>
+        <img alt="User profile picture" class="rounded-full" height="40" src="https://placehold.co/40x40" width="40"/>
+    </div>
+    <!-- Main Content -->
+    <div class="flex-grow flex items-center justify-center">
+        <h1 class="text-4xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-blue-500 to-pink-500">Hello, Hero</h1>
+    </div>
+    <!-- Messages Display -->
+    <div id="messages" class="flex-grow flex flex-col items-center justify-center space-y-2"></div>
+    <!-- Bottom Bar -->
+    <div class="flex items-center p-4 bg-gray-800 rounded-t-lg">
+        <i class="fas fa-plus text-xl"></i>
+        <input id="messageInput" class="flex-grow mx-4 p-2 bg-gray-700 rounded-lg text-white placeholder-gray-400" placeholder="Ask Gemini" type="text"/>
+        <i id="sendButton" class="fas fa-paper-plane text-xl cursor-pointer"></i>
+        <i class="fas fa-microphone text-xl ml-4"></i>
+        <i class="fas fa-chart-line text-xl ml-4"></i>
+    </div>
+    
+    
+    <!-- Hidden file input -->
+   <input type="file" id="profileImageInput" accept="image/*" style="display: none;">
+
+<!-- Circular Profile Image -->
+   <img id="profileImage" src="default-avatar.png" alt="Profile" onclick="document.getElementById('profileImageInput').click();" 
+     style="width: 40px; height: 40px; border-radius: 50%; object-fit: cover; cursor: pointer;">
+     
+     
+    <script src="main.js">
+       
+    </script>
+</body>
+</html>
